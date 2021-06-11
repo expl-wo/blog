@@ -15,15 +15,15 @@ function App() {
       <Row className="comm-main" type="flex" justify="center">
         <Col className="comm-left" xs={24} sm={24} md={16} lg={18}
           xl={14}>
-          <MyList/>
-          </Col>
+          <MyList />
+        </Col>
         <Col className="comm-left" xs={0} sm={0} md={7} lg={5}
           xl={4}>
-          <Author/>
-          <Advertise/>
-          </Col>
+          <Author />
+          <Advertise />
+        </Col>
       </Row>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

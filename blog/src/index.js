@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom';
 import './style/comm.css';
 import './style/index.css'
 import App from './App';
+// import marked from 'marked'
+// import hljs from 'highlight'
+// import 'highlight.js/styles/monokai-sublime.css'
 
 ReactDOM.render(
   // <React.StrictMode>

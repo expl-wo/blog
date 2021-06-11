@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <h2 v-on:click='handleClick'>{{count || filter}}</h2>
+            <span v-html='template'>{{template}}</span>
+            <input placeholder='please type something' v-model='this.inputValue'/>
+            <button  @click='addList'>add list</button>
+            <ul>
+                <li v-for='(item,index) of list' key={index} v-html='item'>
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var data = {
+                    inputValue : '',
+                    count: +new Date(),
+                    list:['js','vue','react'],
+                    template:'<h2>mongodb</h2>'
+                }
+        var app = Vue.createApp({
+            data() {
+                return data;
+            },
+            mounted(){
+                setInterval(()=>{
+                    this.count = +new Date()
+                },1000)
+            },
+            methods: {
+                handleClick() {
+                    this.count = 'welcome';
+                },
+                addList(e){
+                    this.list.push(this.inputValue);
+                }
+            },
+            // template: `
+            //     <div>
+            //         <h2 v-on:click='handleClick'>{{count}}</h2>
+            //         <input placeholder='please type something' v-model='this.inputValue'/>
+            //         <button  @click='addList'>add list</button>
+            //         <ul>
+            //             <li v-for='(item,index) of list' key={index}>
+            //                 {{item}}
+            //             </li>
+            //         </ul>
+            //     </div>`
+        }).mount('#app');
+
+       console.log(Vue);
+    </script>
+</body>
+
+</html>
